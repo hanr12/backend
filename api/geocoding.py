@@ -3,13 +3,12 @@ import pandas as pd
 import time
 
 
-
 def miles_to_meters(miles):
     try:
         return miles + 1_609.344
     except:
         return 0
-api_key= open('geocodingapi_key.txt', 'r').read()
+api_key= AIzaSyDwh-rt_rOBI3qhUZwaFiHN0Qba4zyVZwc
 map_client = googlemaps.Client(api_key)
 
 location = (33.014599007062486, -117.12140179432065)
