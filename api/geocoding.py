@@ -1,18 +1,35 @@
+from flask import Blueprint, jsonify 
+from flask_restful import Api, Resource 
 import googlemaps
 import pandas as pd
 import time
 
-def miles_to_meters(miles):
-  try:
-    return miles + 1_609.344
-  except:
-    return 0
+from model.geocoding import *
+
+geocoding_api = Blueprint('geocoding_api', __name__,
+                   url_prefix='/api/geocoding')
+
+api = Api(geocoding_api)
 
 api_key = 'AIzaSyDwh-rt_rOBI3qhUZwaFiHN0Qba4zyVZwc'
 map_client = googlemaps.Client(api_key)
+
+class GeocodingApi:
+  class _Create(Resource):
+        def post(self, art_museum):
+            pass
+            
+    # getJokes()
+    class _Read(Resource):
+        def get(self):
+            return jsonify(getArtmuseum())
+          
+ class _ReadID(Resource):
+        def get(self, id):
+            return jsonify(getArtmuseum(id))
+  
 location = (33.014599007062486, -117.12140179432065)
 search_string = 'art'
-distance = miles_to_meters(15)
 business_list = []
 response = map_client.places_nearby(
   Location=location,

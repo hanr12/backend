@@ -1,5 +1,4 @@
 import googlemaps
-import prettyprint
 import requests
 
 def searchplace():
