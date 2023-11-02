@@ -20,11 +20,11 @@ class GeocodingApi:
             pass
             
     # getJokes()
-    class _Read(Resource):
+  class _Read(Resource):
         def get(self):
             return jsonify(getArtmuseum())
           
- class _ReadID(Resource):
+  class _ReadID(Resource):
         def get(self, id):
             return jsonify(getArtmuseum(id))
   
